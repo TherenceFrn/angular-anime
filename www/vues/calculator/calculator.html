@@ -1,0 +1,111 @@
+<style>
+.calculatrice{
+width: 80%;
+margin: auto;
+}
+
+.calculatrice button{
+    width: 24%;
+    margin: 0;
+    padding: 15px;
+    font-size: 25px;
+    background: lightcyan;
+    border: none;
+}
+
+.calculatrice button.operation{
+    background: aquamarine;
+}
+
+.calculatrice button.element {
+    background: lightgray;
+}
+
+.calculatrice button:active {
+    color: darkslateblue;
+    font-weight: bold;
+}
+
+.calculatrice p{
+    width: 100%;
+    font-size: 25px;
+    text-align: center;
+}
+</style>
+
+
+
+<ion-view view-title="Accueil">
+    <ion-content>
+        <h1>CALCULATRICE : </h1>
+
+
+        <div class="calculatrice">
+
+            <p>
+                [{{s.affichage}}]
+            </p>
+            
+            <br>
+            <button ng-click="ajout(1)">
+                1
+            </button>
+            <button ng-click="ajout(2)">
+                2
+            </button>
+            <button ng-click="ajout(3)">
+                3
+            </button>
+            <button class="operation" ng-click="ajout('+')">
+              +
+            </button>
+            <br>
+            <button ng-click="ajout(4)">
+                4
+            </button>
+            <button ng-click="ajout(5)">
+                5
+            </button>
+            <button ng-click="ajout(6)">
+                6
+            </button>
+            <button class="operation" ng-click="ajout('-')">
+              -
+            </button>
+            <br>
+            <button ng-click="ajout(7)">
+                7
+            </button>
+            <button ng-click="ajout(8)">
+                8
+            </button>
+            <button ng-click="ajout(9)">
+                9
+            </button>
+            <button class="operation" ng-click="ajout('*')">
+              *
+            </button>
+            <br>
+            <button class="element" ng-click="reset()">
+                RESET
+            </button>
+            <button ng-click="ajout(0)">
+                0
+            </button>
+            <button class="element" ng-click="calcul()">
+            CALCUL
+            </button>   
+            <button class="operation" ng-click="ajout('/')">
+              /
+            </button>
+    </div>  
+
+
+    <div>
+        <input style="background-color: green;"  type="text" ng-model="oui">
+        <span style="background-color: blue;">
+            {{oui}}
+        </span>
+    </div>
+    </ion-content>
+</ion-view>

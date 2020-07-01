@@ -1,0 +1,11 @@
+<ion-view view-title="Accueil">
+    <ion-content>
+        <h1>REST COUNTRY</h1>
+
+        <ion-list>
+            <ion-item ng-repeat="p in s.pays">
+                {{p.name}} {{p.capital}}
+            </ion-item>
+        </ion-list>
+    </ion-content>
+</ion-view>

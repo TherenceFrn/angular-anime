@@ -1,0 +1,21 @@
+<ion-view view-title="Cookies">
+    <ion-content>
+
+        <div ng-show="s.reussi == false">
+            
+            <h1>Choisis un nombre entre 1 et {{s.majoration}}</h1>
+            <h1 ng-show="s.infosNb == true">Le nombre est {{s.moinsPlus}} grand</h1>
+            
+            <input placeholder="Your guess" type="number" ng-model="query" style="border: 1px solid black;">
+            
+            <button ng-click="s.verification(query)">DEVINEZ</button>
+            
+            <p>{{s.nbDevine}}</p>
+        </div>
+        <div ng-show="s.reussi == true">
+            <h1>Bravo vous avez réussi, le nombre était {{s.nbAlea}}</h1>
+            <h1>La difficulté augmente</h1>
+            <button ng-click="s.rejouer()">REJOUER</button>
+        </div>
+    </ion-content>
+</ion-view>  

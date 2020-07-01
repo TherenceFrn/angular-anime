@@ -1,0 +1,3 @@
+https://api.jikan.moe/v3/anime/47
+https://jikan.docs.apiary.io/#reference/0/manga/manga-request-example+schema
+https://jikan.moe/

@@ -1,0 +1,53 @@
+<ion-view view-title="Accueil">
+    <ion-content>
+
+        <style>
+            img{
+                max-width: 50px;
+                float: right;
+            }
+            input{
+                border: 1px solid black !important;
+                margin: 2% !important;
+                padding: .5% !important;
+                width: 95%;
+            }
+            p{
+                color: red;
+                font-size: 50px;
+            }
+            a{
+                color: black;
+                text-align: center;
+                font-size: 25px;
+                text-decoration: underline;
+            }
+        </style>
+
+
+        <h1>REST COUNTRY</h1>
+
+        <p ng-hide="s.apicharge == true">
+            CHARGEMENT ... 
+        </p>
+
+        <input type="text" ng-model="laRecherche" ng-show="s.apicharge == true">
+        <a ng-click="faireRecherche(laRecherche)" ng-show="s.apicharge == true">
+            RECHERCHER
+        </a>
+        <br>
+        <span ng-show="s.apicharge == true">Nombre de recherches : {{s.nombrePays}}</span>
+            <ion-list ng-show="s.yatilrecherche == false && s.apicharge == true">
+                <ion-item ng-repeat="p in s.pays">
+                    {{p.name}} - {{p.capital}} - {{p.population}} habitants <img src="{{p.flag}}">
+                </ion-item>
+            </ion-list>
+
+           <ion-list ng-show="s.yatilrecherche == true && s.apicharge == true">
+             <ion-item ng-repeat="p in s.paysF">
+               {{p.name}} - {{p.capital}} - {{p.population}} habitants <img src="{{p.flag}}">
+             </ion-item>
+           </ion-list>
+
+    </ion-content>
+</ion-view>

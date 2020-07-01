@@ -1,0 +1,13 @@
+<ion-view view-title="Page de connection au jeu">
+    <ion-content>
+
+        <div id="JEU">
+
+            <div class="connection" ng-show="!s.userExist">
+                <input class="inputUser" type="text" ng-model="userName" placeholder="Entrez votre nom">
+                <input class="button" type="submit" ng-click="s.saveUser(userName)" value="JE VEUX JOUER">
+            </div>
+                       
+        </div>
+        </ion-content>
+    </ion-view>

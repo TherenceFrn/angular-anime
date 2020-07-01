@@ -1,0 +1,84 @@
+<ion-view view-title="Jeu Anime">
+    <ion-content>
+
+        <div id="JEU">
+
+            
+            <div class="connection" ng-show="!s.userExist">
+                <input class="inputUser" type="text" ng-model="userName" placeholder="Entrez votre nom">
+                <input class="button" type="submit" ng-click="s.saveUser(userName)" value="JE VEUX JOUER">
+            </div>
+            
+
+
+
+            
+            <div class="interface-jeu" ng-show="s.userExist && !s.userWon">
+
+                <div class="top">
+                    <div class="user_infos">
+                      <a class="button disconnect" ng-click="deleteCookie()">
+                        ME DECONNECTER
+                      </a>
+                      <p>Utilisateur : <strong>{{s.userName}}</strong></p>
+                    </div>
+                    <div class="user_rejouer">
+                        <a ng-show="s.userExist && !s.userWon" class="button play_again" ng-click="reset()">
+                            REJOUER
+                        </a>
+                    </div>
+                </div>
+
+                <div class="mid">
+                    <div class="questions">
+                        <div class="question question-texte" ng-show="s.alternRep">
+                            Titre :
+                            <p>
+                                {{s.goodAnswer['title']}}
+                            </p>
+                        </div>
+                        <div class="question question-image" ng-show="!s.alternRep">
+                            Affiche :
+                            <p>
+                                <img src="{{s.goodAnswer['image_url']}}">
+                            </p>
+                        </div>
+                    </div>
+                    <div class="reponses">
+                        <div class="elementjeu images" ng-show="s.alternRep">
+                            <div class="image" ng-repeat="g in s.data">
+                                <img src="{{g.image_url}}" ng-click="verif({{g.mal_id}})">
+                            </div>
+                        </div>
+                        <div class="elementjeu textes" ng-show="!s.alternRep">
+                            <div class="texte" ng-repeat="g in s.data">
+                                <p ng-click="verif({{g.mal_id}})">{{g.title}}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="bot">
+                    <p class="score">Score : {{s.userScore}}</p>
+                </div>
+            </div>
+
+            
+
+
+
+
+
+            
+            <div ng-show="s.userWon">
+                <div class="principaleEcranfinal">
+                    <p>BRAVO {{s.userName}} ! Vous avez gagné</p>
+                    <p>Votre temps : {{s.chrono}}</p>
+                    <p>Record : {{s.recordTime}}, détenu par {{s.recordName}}</p>
+                </div>
+                <a class="play_again" ng-click="reset()">REJOUER</a>
+                <a class="play_again" ng-click="deleteCookie()">ME DECONNECTER</a>
+            </div>
+            
+        </div>
+        </ion-content>
+    </ion-view>

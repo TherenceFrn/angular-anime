@@ -1,0 +1,22 @@
+<ion-view view-title="Accueil">
+  <ion-content>
+    <h1>Les communes de France</h1>
+    <hr>
+        <h1>Ville enregistrée : {{s.dataCookieNom}} - {{s.dataCookieCode}}</h1>
+        <a ng-click="s.supprfav()">Supprimer les cookies</a>
+    <hr>
+    <form>
+      <div>
+        <h2>Chercher une nouvelle commune : </h2>
+      <input type="search" id="maRecherche" name="q"
+       placeholder="Code postal" ng-model="s.codeRecherche">
+      <button ng-click="Recherche(s.codeRecherche)">Rechercher</button>
+    </div>
+  </form>
+
+  <ion-list ng-show="s.rechercheDone" ng-repeat="p in s.data">
+    Nom de la commune : {{p.nom}} <button ng-click="saveCookie(p.nom)">Enregistrer cette commune</button>
+  </ion-list>
+
+  </ion-content>
+</ion-view>

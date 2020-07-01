@@ -1,0 +1,51 @@
+<ion-view view-title="MusicGame">
+    <ion-content>
+
+        <style>
+            img{
+                max-width: 50px;
+            }
+            
+        </style>
+
+        <div ng-show="!s.userSaved">
+            <input type="text" ng-model="userName" placeholder="Entrez votre nom">
+            <input type="submit" ng-click="s.saveUser(userName)">
+        </div>
+       
+        <div ng-show="s.userSaved">
+            <ion-list ng-show="s.apicharge == true">
+            <ion-item ng-repeat="g in s.data">
+                Id : {{g.mal_id}} <br>
+                Titre : {{g.title}} <br>
+                <!-- Titre Original: {{g.title_japanese}} <br>
+                            Type : {{g.type}} <br> -->
+                <!-- Trailer : <a href="{{g.trailer_url}}">{{g.trailer_url}}</a><br> -->
+                Affiche : <img src="{{g.image_url}}"> <br>
+                <!-- Durée : {{g.duration}} <br>
+                            Synopsis : {{g.synopsis}} <br>
+                            Status : {{g.status}} <br> -->
+            </ion-item>
+            </ion-list>
+
+            <h2>Bonne Réponse : </h2>
+            <a ng-click="genGoodAnswer()">Génerer une bonne réponse</a>
+            <br>
+            <a ng-click="deleteCookie()">Supprimer le cookie</a>
+            <ion-list>
+            <ion-item>
+                Id : {{s.goodAnswerId}} <br>
+                Titre : {{s.goodAnswerTitle}} <br>
+                <!-- Titre Original: {{g.title_japanese}} <br>
+                            Type : {{g.type}} <br> -->
+                <!-- Trailer : <a href="{{g.trailer_url}}">{{g.trailer_url}}</a><br> -->
+                Affiche : <img src="{{s.goodAnswerImage}}"> <br>
+                <!-- Durée : {{g.duration}} <br>
+                            Synopsis : {{g.synopsis}} <br>
+                            Status : {{g.status}} <br> -->
+            </ion-item>
+            </ion-list>
+        </div>
+                 
+    </ion-content>
+</ion-view>

@@ -1,0 +1,152 @@
+/* Empty. Add your own CSS if you like */
+img {
+  width: 250px;
+  height: 350px;
+}
+#JEU *{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+a,
+a:visited {
+  color: inherit;
+  text-decoration: none;
+}
+
+/*
+bleu : #3498db
+rouge : #e74c3c
+*/
+
+.interface-jeu{
+  height: 100%;
+}
+
+.interface-jeu .top{
+  display: flex;
+  justify-content: space-between;
+  background-color: #3498db;
+  padding: 15px 0 !important;
+}
+
+.interface-jeu .top .user_infos,
+.interface-jeu .top .user_rejouer
+{
+  margin: 0 100px !important;
+  align-items: center !important;
+  display: flex;
+}
+
+.interface-jeu .top .user_infos p{
+    margin-left: 15px !important;
+    color: white;
+    font-size: 15px;
+}
+
+
+.interface-jeu .mid {
+    margin: 35px 100px !important;
+}
+
+.interface-jeu .mid .questions{
+    text-align: center;
+    font-size: 35px;
+    line-height: 40px;
+    margin-bottom: 50px !important;
+}
+
+.interface-jeu .mid .questions img{
+  border-right: solid 10px #e74c3c;
+  border-left: solid 10px #3498db;
+  border-radius: 10px;
+}
+
+.interface-jeu .mid .questions p {
+  color: #3498db;
+}
+
+.interface-jeu .mid .reponses .elementjeu{
+  display: flex;
+  justify-content: space-between;
+}
+
+.interface-jeu .mid .reponses img {
+  border-top: solid 10px white;
+  border-bottom: solid 10px white;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.interface-jeu .mid .reponses img:hover {
+  border-top: solid 10px #e74c3c;
+  border-bottom: solid 10px #3498db;
+  border-radius: 10px;
+}
+
+.interface-jeu .mid .reponses p {
+  border-top: solid 10px white;
+  border-bottom: solid 10px white;
+  border-radius: 10px;
+  font-size: 25px;
+  padding: 10px !important;
+}
+
+.interface-jeu .mid .reponses p:hover {
+  border-top: solid 10px #e74c3c;
+  border-bottom: solid 10px #3498db;
+  border-radius: 10px;
+}
+
+.interface-jeu .bot {
+  background-color: #e74c3c;
+  width: 100%;
+  padding: 35px 100px !important;
+  color: white;
+  text-align: center;
+  font-size: 35px;
+}
+
+/* CONNECTTION */
+
+.connection {
+    width: 35%;
+    margin: auto !important;
+}
+
+.connection .inputUser{
+  border-bottom: 5px solid #3498db;
+  border-top: 5px solid white;
+  border-radius: 5px;
+}
+
+.connection .inputUser:hover,
+.connection .inputUser:focus,
+.connection .inputUser:active
+ {
+  border-bottom: 5px solid white;
+  border-top: 5px solid #e74c3c;
+  border-radius: 5px;
+}
+
+.connection input{
+  width: 100%;
+  margin: 25px 0 !important;
+}
+
+.button{
+    background-color: #3498db;
+    border: 3px solid #266d9c;
+    color: white;
+    border-radius: 35px;
+    padding: 5px 10px !important;
+}
+
+.button:hover,
+.button:active
+{
+  background-color: #266d9c;
+  border: 3px solid #266d9c;
+  color: white;
+  border-radius: 35px;
+}
